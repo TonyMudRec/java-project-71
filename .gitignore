@@ -9,3 +9,4 @@ build
 .git
 .gitattributes
 app/.idea
+app/build/*

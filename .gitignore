@@ -10,3 +10,4 @@ build
 .gitattributes
 app/.idea
 app/build/*
+files/*

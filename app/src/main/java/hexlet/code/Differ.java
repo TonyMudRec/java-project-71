@@ -12,15 +12,15 @@ import java.util.TreeMap;
 
 
 public class Differ {
-    static Path absoluteFilePath1 = Paths.get(InitCommand.getFilepath1()).toAbsolutePath().normalize();
-    static Path absoluteFilePath2 = Paths.get(InitCommand.getFilepath2()).toAbsolutePath().normalize();
+    static Path absoluteFilePath1 = Paths.get(App.getFilepath1()).toAbsolutePath().normalize();
+    static Path absoluteFilePath2 = Paths.get(App.getFilepath2()).toAbsolutePath().normalize();
 
     public static boolean isFileExist() {
         if (Files.notExists(absoluteFilePath1)) {
-            System.out.println("File '" + InitCommand.getFilepath1() + "' does not exist");
+            System.out.println("File '" + App.getFilepath1() + "' does not exist");
             return false;
         } else if (Files.notExists(absoluteFilePath2)) {
-            System.out.println("File '" + InitCommand.getFilepath2() + "' does not exist");
+            System.out.println("File '" + App.getFilepath2() + "' does not exist");
             return false;
         }
         return true;

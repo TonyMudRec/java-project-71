@@ -10,4 +10,4 @@ build
 .gitattributes
 app/.idea
 app/build/*
-files/*
+app/src/test/resources/*

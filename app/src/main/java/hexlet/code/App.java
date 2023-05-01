@@ -7,7 +7,7 @@ import java.util.concurrent.Callable;
 
 @CommandLine.Command(
         name = "./app/build/install/app/bin/app",
-        version = "1.1",
+        version = "1.2",
         mixinStandardHelpOptions = true,
         description = "Compares two configuration files and shows a difference.")
 public class App implements Callable {
@@ -45,7 +45,7 @@ public class App implements Callable {
         new CommandLine(new App()).execute(args);
     }
     @Override
-    public Object call() throws Exception {
+    public Object call() {
         try {
             System.out.println(Differ.generate());
         } catch (IOException e) {

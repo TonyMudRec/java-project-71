@@ -5,7 +5,6 @@
 build
 
 .idea
-.github
 .git
 .gitattributes
 app/.idea

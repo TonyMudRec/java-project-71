@@ -4,7 +4,7 @@ clean:
 	./gradlew clean
 
 build:
-	./gradlew clean build
+	./gradlew clean test build
 
 install:
 	./gradlew clean install

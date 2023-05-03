@@ -4,9 +4,8 @@ clean:
 	./gradlew clean
 
 build:
-	./gradlew clean
+	./gradlew clean 
 	./gradlew build
-	./gradlew test
 
 install:
 	./gradlew clean install

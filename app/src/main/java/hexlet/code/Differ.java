@@ -10,6 +10,9 @@ public class Differ {
     public static String generate(String filepath1, String filepath2) {
         Map<String, Object> mapFile1 = new HashMap<>(Parser.parse(filepath1));
         Map<String, Object> mapFile2 = new HashMap<>(Parser.parse(filepath2));
+        if (mapFile1.isEmpty() && mapFile2.isEmpty()) {
+            return "";
+        }
         Map<String, Object> jointMap = new TreeMap<>(mapFile1);
         jointMap.putAll(mapFile2);
         StringBuilder sb = new StringBuilder("{" + "\n");

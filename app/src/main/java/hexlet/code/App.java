@@ -21,12 +21,12 @@ public class App implements Callable {
     @CommandLine.Parameters(
             paramLabel = "filepath1",
             description = "path to first file")
-     private static String filepath1;
+    private static String filepath1;
 
     @CommandLine.Parameters(
             paramLabel = "filepath2",
             description = "path to second file")
-     private static String filepath2;
+    private static String filepath2;
 
     public static void main(String[] args) {
         new CommandLine(new App()).execute(args);

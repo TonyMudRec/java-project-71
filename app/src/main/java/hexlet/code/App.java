@@ -2,12 +2,11 @@ package hexlet.code;
 
 import picocli.CommandLine;
 
-import java.io.IOException;
 import java.util.concurrent.Callable;
 
 @CommandLine.Command(
         name = "./app/build/install/app/bin/app",
-        version = "1.3",
+        version = "1.4",
         mixinStandardHelpOptions = true,
         description = "Compares two configuration files and shows a difference.")
 public class App implements Callable {
@@ -34,11 +33,7 @@ public class App implements Callable {
     }
     @Override
     public Object call() {
-        try {
-            System.out.println(Differ.generate(filepath1, filepath2));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        System.out.println(Differ.generate(filepath1, filepath2));
         return null;
     }
 }

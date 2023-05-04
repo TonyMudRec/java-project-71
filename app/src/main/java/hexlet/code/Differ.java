@@ -1,7 +1,5 @@
 package hexlet.code;
 
-import java.io.IOException;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
@@ -9,7 +7,7 @@ import java.util.TreeMap;
 
 public class Differ {
 
-    public static String generate(String filepath1, String filepath2) throws IOException {
+    public static String generate(String filepath1, String filepath2) {
         Map<String, Object> mapFile1 = new HashMap<>(Parser.parse(filepath1));
         Map<String, Object> mapFile2 = new HashMap<>(Parser.parse(filepath2));
         Map<String, Object> jointMap = new TreeMap<>(mapFile1);

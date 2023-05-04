@@ -1,5 +1,6 @@
 test-run:
 	./build/install/app/bin/app src/test/resources/files/file1.json src/test/resources/files/file2.json
+	./build/install/app/bin/app src/test/resources/files/file3.yaml src/test/resources/files/file4.yaml
 
 lint:
 	./gradlew checkstyleMain checkstyleTest

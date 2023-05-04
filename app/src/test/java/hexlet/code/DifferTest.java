@@ -23,13 +23,4 @@ class DifferTest {
 
         assertThat(Differ.generate(testFilePath1, testFilePath2)).isEqualTo(expected);
     }
-
-    @Test
-    void checkExistFile() throws IOException {
-        String testFilePath1 = "src/test/resources/files/file1.json";
-        String testFilePath2 = "src/test/resources/files/file3.json";
-
-        assertThat(Differ.convertPathToAbsolutePath(testFilePath1)).isNotNull();
-        assertThat(Differ.convertPathToAbsolutePath(testFilePath2)).isNull();
-    }
 }

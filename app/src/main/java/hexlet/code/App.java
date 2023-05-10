@@ -6,7 +6,7 @@ import java.util.concurrent.Callable;
 
 @CommandLine.Command(
         name = "./app/build/install/app/bin/app",
-        version = "1.4",
+        version = "1.5",
         mixinStandardHelpOptions = true,
         description = "Compares two configuration files and shows a difference.")
 public class App implements Callable {

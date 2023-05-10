@@ -56,9 +56,9 @@ class DifferTest {
     }
 
     @Test
-    void generateTestJsonYaml() {
-        String testFilePath1 = "src/test/resources/files/file3.yaml";
-        String testFilePath2 = "src/test/resources/files/file4.yaml";
+    void generateTestYaml() {
+        String testFilePath1 = "src/test/resources/files/file1.yaml";
+        String testFilePath2 = "src/test/resources/files/file2.yaml";
         String expected = "{\n"
                 + " - follow: false\n"
                 + "   host: hexlet.io\n"

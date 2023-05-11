@@ -19,7 +19,7 @@ class DifferTest {
                 + " + verbose: true\n"
                 + "}";
 
-        assertThat(Differ.generate(testFilePath1, testFilePath2)).isEqualTo(expected);
+        assertThat(Differ.generate(testFilePath1, testFilePath2, "stylish")).isEqualTo(expected);
     }
 
     @Test
@@ -52,7 +52,7 @@ class DifferTest {
                 + " + setting3: none\n"
                 + "}";
 
-        assertThat(Differ.generate(testFilePath1, testFilePath2)).isEqualTo(expected);
+        assertThat(Differ.generate(testFilePath1, testFilePath2, "stylish")).isEqualTo(expected);
     }
 
     @Test
@@ -67,6 +67,6 @@ class DifferTest {
                 + " + timeout: 20\n"
                 + " + verbose: true\n"
                 + "}";
-        assertThat(Differ.generate(testFilePath1, testFilePath2)).isEqualTo(expected);
+        assertThat(Differ.generate(testFilePath1, testFilePath2, "stylish")).isEqualTo(expected);
     }
 }

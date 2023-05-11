@@ -6,17 +6,17 @@ import java.util.concurrent.Callable;
 
 @CommandLine.Command(
         name = "./app/build/install/app/bin/app",
-        version = "1.5",
+        version = "1.6",
         mixinStandardHelpOptions = true,
         description = "Compares two configuration files and shows a difference.")
 public class App implements Callable {
 
-//    @CommandLine.Option(
-//            names = {"-f", "--format"},
-//            description = "output format [default: stylish]",
-//            defaultValue = "stylish"
-//    )
-//    static private String format;
+    @CommandLine.Option(
+            names = {"-f", "--format"},
+            description = "output format [default: stylish]",
+            defaultValue = "stylish"
+    )
+    private static String format;
 
     @CommandLine.Parameters(
             paramLabel = "filepath1",
@@ -33,7 +33,7 @@ public class App implements Callable {
     }
     @Override
     public Object call() {
-        System.out.println(Differ.generate(filepath1, filepath2));
+        System.out.println(Differ.generate(filepath1, filepath2, format));
         return null;
     }
 }

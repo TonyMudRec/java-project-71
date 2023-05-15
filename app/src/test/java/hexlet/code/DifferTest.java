@@ -7,9 +7,32 @@ import static org.assertj.core.api.Assertions.assertThat;
 class DifferTest {
 
     @Test
-    void generateTestSimpleJson() {
+    void nullStylishJsonTest() {
         String testFilePath1 = "src/test/resources/files/file1.json";
         String testFilePath2 = "src/test/resources/files/file2.json";
+        String expected = "{\n"
+                + " - checked: null\n"
+                + " + checked: true\n"
+                + " - default: 5\n"
+                + " + default: null\n"
+                + "}";
+
+        assertThat(Differ.generate(testFilePath1, testFilePath2, "stylish")).isEqualTo(expected);
+    }
+
+    @Test
+    void fileNotExistTest() {
+        String testFilePath1 = "src/test/resources/files/file0.json";
+        String testFilePath2 = "src/test/resources/files/file2.json";
+        String expected = "File 'src/test/resources/files/file0.json' does not exist, or cannot be reading";
+
+        assertThat(Differ.generate(testFilePath1, testFilePath2, "stylish")).isEqualTo(expected);
+    }
+
+    @Test
+    void fullGenerateYamlTest() {
+        String testFilePath1 = "src/test/resources/files/file1.yaml";
+        String testFilePath2 = "src/test/resources/files/file2.yaml";
         String expected = "{\n"
                 + " - follow: false\n"
                 + "   host: hexlet.io\n"
@@ -23,7 +46,29 @@ class DifferTest {
     }
 
     @Test
-    void generateTestHardJson() {
+    void fullGeneratePlainJsonTest() {
+        String testFilePath1 = "src/test/resources/files/file3.json";
+        String testFilePath2 = "src/test/resources/files/file4.json";
+        String expected = """
+                Property 'chars2' was updated. From [complex value] to false
+                Property 'checked' was updated. From false to true
+                Property 'default' was updated. From null to [complex value]
+                Property 'id' was updated. From 45 to null
+                Property 'key1' was removed
+                Property 'key2' was added with value: 'value2'
+                Property 'numbers2' was updated. From [complex value] to [complex value]
+                Property 'numbers3' was removed
+                Property 'numbers4' was added with value: [complex value]
+                Property 'obj1' was added with value: [complex value]
+                Property 'setting1' was updated. From 'Some value' to 'Another value'
+                Property 'setting2' was updated. From 200 to 300
+                Property 'setting3' was updated. From true to 'none'""";
+
+        assertThat(Differ.generate(testFilePath1, testFilePath2, "plain")).isEqualTo(expected);
+    }
+
+    @Test
+    void fullGenerateWithObjectsStylishJsonTest() {
         String testFilePath1 = "src/test/resources/files/file3.json";
         String testFilePath2 = "src/test/resources/files/file4.json";
         String expected = "{\n"
@@ -52,21 +97,6 @@ class DifferTest {
                 + " + setting3: none\n"
                 + "}";
 
-        assertThat(Differ.generate(testFilePath1, testFilePath2, "stylish")).isEqualTo(expected);
-    }
-
-    @Test
-    void generateTestYaml() {
-        String testFilePath1 = "src/test/resources/files/file1.yaml";
-        String testFilePath2 = "src/test/resources/files/file2.yaml";
-        String expected = "{\n"
-                + " - follow: false\n"
-                + "   host: hexlet.io\n"
-                + " - proxy: 123.234.53.22\n"
-                + " - timeout: 50\n"
-                + " + timeout: 20\n"
-                + " + verbose: true\n"
-                + "}";
         assertThat(Differ.generate(testFilePath1, testFilePath2, "stylish")).isEqualTo(expected);
     }
 }

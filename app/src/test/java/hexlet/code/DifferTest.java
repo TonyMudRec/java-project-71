@@ -100,4 +100,13 @@ class DifferTest {
 
         assertThat(Differ.generate(testFilePath1, testFilePath2, "stylish")).isEqualTo(expected);
     }
+
+    @Test
+    void createJsonFileMessage() {
+        String testFilePath1 = "src/test/resources/files/file3.json";
+        String testFilePath2 = "src/test/resources/files/file4.json";
+        String expected = "File 'Diff.json' was successfully created!";
+
+        assertThat(Differ.generate(testFilePath1, testFilePath2, "json")).isEqualTo(expected);
+    }
 }

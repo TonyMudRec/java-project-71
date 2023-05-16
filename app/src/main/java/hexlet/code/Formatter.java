@@ -9,11 +9,10 @@ public class Formatter {
 
     public static String useForm(String format, Map<String, Object> mapFile1, Map<String, Object> mapFile2,
                                  Map<String, Object> jointMap) {
-        String result;
-        switch (format) {
-            case "plain" -> result = Plain.construct(mapFile1, mapFile2, jointMap);
-            default -> result = Stylish.construct(mapFile1, mapFile2, jointMap);
-        }
-        return result;
+        return switch (format) {
+            case "stylish" -> Stylish.construct(mapFile1, mapFile2, jointMap);
+            case "plain" -> Plain.construct(mapFile1, mapFile2, jointMap);
+            default -> "Format is not exist";
+        };
     }
 }

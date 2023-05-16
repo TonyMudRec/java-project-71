@@ -14,16 +14,16 @@ public class Stylish {
             if (mapFile1.containsKey(key) && mapFile2.containsKey(key)) {
                 lastValue = mapFile1.get(key) == null ? "null" : mapFile1.get(key).toString();
                 if (!lastValue.equals(currentValue)) {
-                    sb.append(" - ").append(key).append(": ").append(lastValue).append("\n");
-                    sb.append(" + ").append(key).append(": ").append(currentValue).append("\n");
+                    sb.append("- ").append(key).append(": ").append(lastValue).append("\n");
+                    sb.append("+ ").append(key).append(": ").append(currentValue).append("\n");
                 } else {
-                    sb.append("   ").append(key).append(": ").append(currentValue).append("\n");
+                    sb.append("  ").append(key).append(": ").append(currentValue).append("\n");
                 }
             } else if (!mapFile1.containsKey(key)) {
-                sb.append(" + ").append(key).append(": ").append(currentValue).append("\n");
+                sb.append("+ ").append(key).append(": ").append(currentValue).append("\n");
             } else {
                 lastValue = mapFile1.get(key) == null ? "null" : mapFile1.get(key).toString();
-                sb.append(" - ").append(key).append(": ").append(lastValue).append("\n");
+                sb.append("- ").append(key).append(": ").append(lastValue).append("\n");
             }
         }
         sb.append("}");

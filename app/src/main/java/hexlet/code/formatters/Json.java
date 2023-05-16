@@ -20,16 +20,16 @@ public class Json {
             if (mapFile1.containsKey(key) && mapFile2.containsKey(key)) {
                 lastValue = mapFile1.get(key) == null ? "null" : mapFile1.get(key).toString();
                 if (!lastValue.equals(currentValue)) {
-                    result.put(" - " + key, lastValue);
-                    result.put(" + " + key, currentValue);
+                    result.put("- " + key, lastValue);
+                    result.put("+ " + key, currentValue);
                 } else {
-                    result.put("   " + key, currentValue);
+                    result.put("  " + key, currentValue);
                 }
             } else if (!mapFile1.containsKey(key)) {
-                result.put(" + " + key, currentValue);
+                result.put("+ " + key, currentValue);
             } else {
                 lastValue = mapFile1.get(key) == null ? "null" : mapFile1.get(key).toString();
-                result.put(" - " + key, lastValue);
+                result.put("- " + key, lastValue);
             }
         }
         try {

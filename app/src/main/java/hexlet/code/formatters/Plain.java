@@ -46,6 +46,8 @@ public class Plain {
     public static boolean isEqual(Object o1, Object o2) {
         if (o1 == null | o2 == null) {
             return false;
-        } else return (o1 == o2 || o1.equals(o2));
+        } else {
+            return (o1 == o2 || o1.equals(o2));
+        }
     }
 }

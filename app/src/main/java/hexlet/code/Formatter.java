@@ -7,12 +7,12 @@ import java.util.Map;
 
 public class Formatter {
 
-    public static String useForm(String format, Map<String, Object> mapFile1, Map<String, Object> mapFile2, Map<String, Object> jointMap) {
-        String result = null;
+    public static String useForm(String format, Map<String, Object> mapFile1, Map<String, Object> mapFile2,
+                                 Map<String, Object> jointMap) {
+        String result;
         switch (format) {
-            case "stylish" -> result = Stylish.construct(mapFile1, mapFile2, jointMap);
             case "plain" -> result = Plain.construct(mapFile1, mapFile2, jointMap);
-            default -> {}
+            default -> result = Stylish.construct(mapFile1, mapFile2, jointMap);
         }
         return result;
     }

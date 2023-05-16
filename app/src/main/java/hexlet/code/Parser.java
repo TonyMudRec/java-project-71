@@ -15,13 +15,13 @@ public class Parser {
         Map<String, Object> mapFile;
         Path path = Paths.get(filepath).toAbsolutePath().normalize();
         ObjectMapper om;
-            if (filepath.endsWith("json")) {
-                om = new ObjectMapper();
-            } else /* if (filepath.endsWith("yaml")) */ {
-                om = new YAMLMapper();
-            }
-            String content = new String(Files.readAllBytes(path));
-            mapFile = om.readValue(content, HashMap.class);
+        if (filepath.endsWith("json")) {
+            om = new ObjectMapper();
+        } else /* if (filepath.endsWith("yaml")) */ {
+            om = new YAMLMapper();
+        }
+        String content = new String(Files.readAllBytes(path));
+        mapFile = om.readValue(content, HashMap.class);
         return mapFile;
     }
 }

@@ -10,5 +10,8 @@
 
 [Step 8](https://asciinema.org/a/oaMSgE3JQ4jy8lqWYqgbOk8Nj)
 
+[Step 9](https://asciinema.org/a/WAKSwqvMe1AV8jsqm6kFZeEfw)
+
+
 
 

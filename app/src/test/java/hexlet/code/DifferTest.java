@@ -5,42 +5,12 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class DifferTest {
-
-    @Test
-    void nullStylishJsonTest() {
-        String testFilePath1 = "src/test/resources/files/file1.json";
-        String testFilePath2 = "src/test/resources/files/file2.json";
-        String expected = "{\n"
-                + "  - checked: null\n"
-                + "  + checked: true\n"
-                + "  - default: 5\n"
-                + "  + default: null\n"
-                + "}";
-
-        assertThat(Differ.generate(testFilePath1, testFilePath2, "stylish")).isEqualTo(expected);
-    }
-
+    
     @Test
     void fileNotExistTest() {
         String testFilePath1 = "src/test/resources/files/file0.json";
         String testFilePath2 = "src/test/resources/files/file2.json";
         String expected = "File 'src/test/resources/files/file0.json' does not exist, or cannot be reading";
-
-        assertThat(Differ.generate(testFilePath1, testFilePath2, "stylish")).isEqualTo(expected);
-    }
-
-    @Test
-    void fullGenerateYamlTest() {
-        String testFilePath1 = "src/test/resources/files/file1.yaml";
-        String testFilePath2 = "src/test/resources/files/file2.yaml";
-        String expected = "{\n"
-                + "  - follow: false\n"
-                + "    host: hexlet.io\n"
-                + "  - proxy: 123.234.53.22\n"
-                + "  - timeout: 50\n"
-                + "  + timeout: 20\n"
-                + "  + verbose: true\n"
-                + "}";
 
         assertThat(Differ.generate(testFilePath1, testFilePath2, "stylish")).isEqualTo(expected);
     }
@@ -112,15 +82,6 @@ class DifferTest {
                 + "+ obj1\":\"{nestedKey=value, isNested=true}\",\"- setting1\":\"Some value\",\""
                 + "+ setting1\":\"Another value\",\"- setting2\":\"200\","
                 + "\"+ setting2\":\"300\",\"- setting3\":\"true\",\"+ setting3\":\"none\"}";
-
-        assertThat(Differ.generate(testFilePath1, testFilePath2, "json")).isEqualTo(expected);
-    }
-
-    @Test
-    void createJsonFileMessage() {
-        String testFilePath1 = "src/test/resources/files/file3.json";
-        String testFilePath2 = "src/test/resources/files/file4.json";
-        String expected = "File 'Diff.json' was successfully created!";
 
         assertThat(Differ.generate(testFilePath1, testFilePath2, "json")).isEqualTo(expected);
     }

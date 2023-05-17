@@ -13,15 +13,16 @@
 - Поддержка разных входных форматов: yaml и json
 - Генерация отчета в виде plain text, stylish и json
 ***
+## Asciinema's 
 
-# [Step 5](https://asciinema.org/a/wz7vnHxFnDhMEwwYoxVmElv6a) Asciinema
+***[Step 5](https://asciinema.org/a/wz7vnHxFnDhMEwwYoxVmElv6a)***
 
-# [Step 7](https://asciinema.org/a/afw8JMPhpCKv7c9NSjD2sg2Dn) Asciinema
+***[Step 7](https://asciinema.org/a/afw8JMPhpCKv7c9NSjD2sg2Dn)***
 
-# [Step 8](https://asciinema.org/a/oaMSgE3JQ4jy8lqWYqgbOk8Nj) Asciinema
+***[Step 8](https://asciinema.org/a/oaMSgE3JQ4jy8lqWYqgbOk8Nj)***
 
-# [Step 9](https://asciinema.org/a/WAKSwqvMe1AV8jsqm6kFZeEfw) Asciinema
+***[Step 9](https://asciinema.org/a/WAKSwqvMe1AV8jsqm6kFZeEfw)***
 
-# [Step 10](https://asciinema.org/a/MuIB8IeLupP2X8tf31ykoBO14) Asciinema
+***[Step 10](https://asciinema.org/a/MuIB8IeLupP2X8tf31ykoBO14)***
 
 

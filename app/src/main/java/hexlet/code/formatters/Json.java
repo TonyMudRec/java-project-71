@@ -13,7 +13,7 @@ public class Json {
             currentValue = jointMap.get(key) == null ? "null" : jointMap.get(key).toString();
             lastValue = mapFile1.get(key) == null ? "null" : mapFile1.get(key).toString();
             if (!mapFile1.containsKey(key) || (mapFile2.containsKey(key) && !lastValue.equals(currentValue))) {
-                sb.append("    \"").append(key).append(":").append(currentValue).append("\",\n");
+                sb.append("    \"").append(key).append("\":\"").append(currentValue).append("\",\n");
             }
         }
         sb.setLength(sb.length() - 1);

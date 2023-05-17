@@ -4,15 +4,30 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/14be2f8258c5251e16ab/maintainability)](https://codeclimate.com/github/TonyMudRec/java-project-71/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/14be2f8258c5251e16ab/test_coverage)](https://codeclimate.com/github/TonyMudRec/java-project-71/test_coverage)
 
-[Step 5](https://asciinema.org/a/wz7vnHxFnDhMEwwYoxVmElv6a)
+## Описание проекта
 
-[Step 7](https://asciinema.org/a/afw8JMPhpCKv7c9NSjD2sg2Dn)
+Вычислитель отличий – программа, определяющая разницу между двумя структурами данных. Это популярная задача, для решения которой существует множество онлайн-сервисов, например: http://www.jsondiff.com/. Подобный механизм используется при выводе тестов или при автоматическом отслеживании изменении в конфигурационных файлах.
 
-[Step 8](https://asciinema.org/a/oaMSgE3JQ4jy8lqWYqgbOk8Nj)
+***Возможности утилиты:***
 
-[Step 9](https://asciinema.org/a/WAKSwqvMe1AV8jsqm6kFZeEfw)
+- Поддержка разных входных форматов: yaml и json
+- Генерация отчета в виде plain text, stylish и json
+***
 
-[Step 10](https://asciinema.org/a/MuIB8IeLupP2X8tf31ykoBO14)
+## Step 5 Asciinema: 
+https://asciinema.org/a/wz7vnHxFnDhMEwwYoxVmElv6a
+
+## Step 5 Asciinema: 
+https://asciinema.org/a/afw8JMPhpCKv7c9NSjD2sg2Dn
+
+## Step 5 Asciinema: 
+https://asciinema.org/a/oaMSgE3JQ4jy8lqWYqgbOk8Nj
+
+## Step 5 Asciinema: 
+https://asciinema.org/a/WAKSwqvMe1AV8jsqm6kFZeEfw
+
+## Step 5 Asciinema: 
+https://asciinema.org/a/MuIB8IeLupP2X8tf31ykoBO14
 
 
 

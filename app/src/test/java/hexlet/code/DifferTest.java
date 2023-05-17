@@ -101,6 +101,28 @@ class DifferTest {
     }
 
     @Test
+    void fullGenerateWithObjectsJsonTest() {
+        String testFilePath1 = "src/test/resources/files/file3.json";
+        String testFilePath2 = "src/test/resources/files/file4.json";
+        String expected = """
+                {
+                    "chars2": false,
+                    "checked": true,
+                    "default": [value1, value2],
+                    "id": null,
+                    "key2": "value2",
+                    "numbers2": [22, 33, 44, 55],
+                    "numbers4": [4, 5, 6],
+                    "obj1": {nestedKey=value, isNested=true},
+                    "setting1": "Another value",
+                    "setting2": 300,
+                    "setting3": "none",
+                }""";
+
+        assertThat(Differ.generate(testFilePath1, testFilePath2, "json")).isEqualTo(expected);
+    }
+
+    @Test
     void createJsonFileMessage() {
         String testFilePath1 = "src/test/resources/files/file3.json";
         String testFilePath2 = "src/test/resources/files/file4.json";

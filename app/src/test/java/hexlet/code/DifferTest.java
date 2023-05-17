@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class DifferTest {
-    
     @Test
     void fileNotExistTest() {
         String testFilePath1 = "src/test/resources/files/file0.json";

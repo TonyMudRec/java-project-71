@@ -1,6 +1,5 @@
 package hexlet.code.formatters;
 
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Json {

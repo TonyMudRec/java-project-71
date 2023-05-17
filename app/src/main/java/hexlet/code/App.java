@@ -9,7 +9,7 @@ import java.util.concurrent.Callable;
         version = "1.7",
         mixinStandardHelpOptions = true,
         description = "Compares two configuration files and shows a difference.")
-public class App implements Callable {
+public final class App implements Callable {
 
     @CommandLine.Option(
             names = {"-f", "--format"},

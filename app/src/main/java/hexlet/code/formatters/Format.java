@@ -1,15 +1,15 @@
 package hexlet.code.formatters;
 
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 public abstract class Format {
     public final String construct(Map<String, Object> mapFile1, Map<String, Object> mapFile2) {
-        Map<String, Object> joinedMap = new TreeMap<>();
+        Set<String> unionKeys = getKeySet(mapFile1, mapFile2);
         StringBuilder sb = new StringBuilder();
-        joinedMap.putAll(mapFile1);
-        joinedMap.putAll(mapFile2);
-        for (String key : joinedMap.keySet()) {
+        for (String key : unionKeys) {
             if (mapFile1.containsKey(key) && mapFile2.containsKey(key)) {
                 if (!isEqual(mapFile1.get(key), mapFile2.get(key))) {
                     sb.append(buildString("changed", key, mapFile1.get(key), mapFile2.get(key)));
@@ -23,6 +23,12 @@ public abstract class Format {
             }
         }
         return packer(sb.toString());
+    }
+
+    final Set<String> getKeySet(Map<String, Object> mapFile1, Map<String, Object> mapFile2) {
+        Map<String, Object> joinedMap = new TreeMap<>(mapFile1);
+        joinedMap.putAll(mapFile2);
+        return new HashSet<>(joinedMap.keySet());
     }
 
     abstract String packer(String string);

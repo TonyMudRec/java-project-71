@@ -18,9 +18,7 @@ public class Differ {
             String filepath = mapFile1.isEmpty() ? filepath1 : filepath2;
             return "File '" + filepath + "' does not exist, or cannot be reading";
         }
-        Map<String, Object> jointMap = new TreeMap<>(mapFile1);
-        jointMap.putAll(mapFile2);
-        return Formatter.useForm(format, mapFile1, mapFile2, jointMap);
+        return Formatter.useForm(format, mapFile1, mapFile2);
     }
 
     public static String generate(String filepath1, String filepath2) {
@@ -33,8 +31,6 @@ public class Differ {
             String filepath = mapFile1.isEmpty() ? filepath1 : filepath2;
             return "File '" + filepath + "' does not exist, or cannot be reading";
         }
-        Map<String, Object> jointMap = new TreeMap<>(mapFile1);
-        jointMap.putAll(mapFile2);
-        return Formatter.useForm("stylish", mapFile1, mapFile2, jointMap);
+        return Formatter.useForm("stylish", mapFile1, mapFile2);
     }
 }

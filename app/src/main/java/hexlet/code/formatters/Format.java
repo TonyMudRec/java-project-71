@@ -5,25 +5,21 @@ import java.util.TreeMap;
 
 public abstract class Format {
     public final String construct(Map<String, Object> mapFile1, Map<String, Object> mapFile2) {
-        Map<String, Object> joinedMap = new TreeMap<>(mapFile1);
-        joinedMap.putAll(mapFile2);
+        Map<String, Object> joinedMap = new TreeMap<>();
         StringBuilder sb = new StringBuilder();
-        String status;
+        joinedMap.putAll(mapFile1);
+        joinedMap.putAll(mapFile2);
         for (String key : joinedMap.keySet()) {
             if (mapFile1.containsKey(key) && mapFile2.containsKey(key)) {
                 if (!isEqual(mapFile1.get(key), mapFile2.get(key))) {
-                    status = "changed";
-                    sb.append(buildString(status, key, mapFile1.get(key), mapFile2.get(key)));
+                    sb.append(buildString("changed", key, mapFile1.get(key), mapFile2.get(key)));
                 } else {
-                    status = "unchanged";
-                    sb.append(buildString(status, key, mapFile1.get(key), mapFile2.get(key)));
+                    sb.append(buildString("unchanged", key, mapFile1.get(key), mapFile2.get(key)));
                 }
             } else if (!mapFile1.containsKey(key)) {
-                status = "added";
-                sb.append(buildString(status, key, mapFile1.get(key), mapFile2.get(key)));
+                sb.append(buildString("added", key, mapFile1.get(key), mapFile2.get(key)));
             } else {
-                status = "removed";
-                sb.append(buildString(status, key, mapFile1.get(key), mapFile2.get(key)));
+                sb.append(buildString("removed", key, mapFile1.get(key), mapFile2.get(key)));
             }
         }
         return packer(sb.toString());

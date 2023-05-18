@@ -2,6 +2,9 @@ package hexlet.code;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 class DifferTest {
@@ -10,12 +13,20 @@ class DifferTest {
         String testFilePath1 = "src/test/resources/files/file0.json";
         String testFilePath2 = "src/test/resources/files/file2.json";
         String expected = "File 'src/test/resources/files/file0.json' does not exist, or cannot be reading";
-
         assertThat(Differ.generate(testFilePath1, testFilePath2, "stylish")).isEqualTo(expected);
     }
 
     @Test
-    void fullGeneratePlainJsonTest() {
+    void wrongFormat() {
+        Map<String, Object> mapFile1 = new HashMap<>();
+        Map<String, Object> mapFile2 = new HashMap<>();
+        String format = "something wrong";
+        String expected = "Format is not exist";
+        assertThat(Formatter.useForm(format, mapFile1, mapFile2)).isEqualTo(expected);
+    }
+
+    @Test
+    void generatePlainTest() {
         String testFilePath1 = "src/test/resources/files/file3.json";
         String testFilePath2 = "src/test/resources/files/file4.json";
         String expected = """
@@ -32,12 +43,11 @@ class DifferTest {
                 Property 'setting1' was updated. From 'Some value' to 'Another value'
                 Property 'setting2' was updated. From 200 to 300
                 Property 'setting3' was updated. From true to 'none'""";
-
         assertThat(Differ.generate(testFilePath1, testFilePath2, "plain")).isEqualTo(expected);
     }
 
     @Test
-    void fullGenerateWithObjectsStylishJsonTest() {
+    void generateStylishTest() {
         String testFilePath1 = "src/test/resources/files/file3.json";
         String testFilePath2 = "src/test/resources/files/file4.json";
         String expected = "{\n"
@@ -65,12 +75,11 @@ class DifferTest {
                 + "  - setting3: true\n"
                 + "  + setting3: none\n"
                 + "}";
-
         assertThat(Differ.generate(testFilePath1, testFilePath2, "stylish")).isEqualTo(expected);
     }
 
     @Test
-    void fullGenerateWithObjectsJsonTest() {
+    void generateJsonTest() {
         String testFilePath1 = "src/test/resources/files/file3.json";
         String testFilePath2 = "src/test/resources/files/file4.json";
         String expected = "{\"chars1\":\"[a, b, c]\",\"- chars2\":\"[d, e, f]\",\""
@@ -81,7 +90,6 @@ class DifferTest {
                 + "+ obj1\":\"{nestedKey=value, isNested=true}\",\"- setting1\":\"Some value\",\""
                 + "+ setting1\":\"Another value\",\"- setting2\":\"200\","
                 + "\"+ setting2\":\"300\",\"- setting3\":\"true\",\"+ setting3\":\"none\"}";
-
         assertThat(Differ.generate(testFilePath1, testFilePath2, "json")).isEqualTo(expected);
     }
 }

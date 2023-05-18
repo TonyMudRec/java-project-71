@@ -33,7 +33,11 @@ public final class App implements Callable {
     }
     @Override
     public Object call() {
-        System.out.println(Differ.generate(filepath1, filepath2, format));
+        if (format.isEmpty()) {
+            System.out.println(Differ.generate(filepath1, filepath2, "stylish"));
+        } else {
+            System.out.println(Differ.generate(filepath1, filepath2, format));
+        }
         return null;
     }
 }

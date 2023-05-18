@@ -14,10 +14,10 @@ public class Formatter {
         Json json = new Json();
         return switch (format) {
             case "stylish" -> sb.append("{\n").append(stylish.construct(mapFile1, mapFile2)).append("}").toString();
-            case "plain" -> sb.append(plain.construct(mapFile1, mapFile2), 0
-                    , plain.construct(mapFile1, mapFile2).length() - 1).toString();
-            case "json" -> sb.append("{").append(json.construct(mapFile1, mapFile2), 0,
-                    json.construct(mapFile1, mapFile2).length() - 1).append("}").toString();
+            case "plain" -> sb.append(plain.construct(mapFile1, mapFile2)
+                    , 0, plain.construct(mapFile1, mapFile2).length() - 1).toString();
+            case "json" -> sb.append("{").append(json.construct(mapFile1, mapFile2)
+                    , 0, json.construct(mapFile1, mapFile2).length() - 1).append("}").toString();
             default -> "Format is not exist";
         };
     }

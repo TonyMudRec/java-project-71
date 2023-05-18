@@ -2,7 +2,7 @@ package hexlet.code.formatters;
 
 public class Json extends Format {
     @Override
-    String buildString(String status, String key, Object lastValue, Object value) {
+    final String buildString(String status, String key, Object lastValue, Object value) {
         StringBuilder sb = new StringBuilder();
         switch (status) {
             case "changed" -> {
@@ -20,7 +20,7 @@ public class Json extends Format {
     }
 
     @Override
-    String transformToString(Object o) {
+    final String transformToString(Object o) {
         String result;
         if (o == null) {
             result = "null";

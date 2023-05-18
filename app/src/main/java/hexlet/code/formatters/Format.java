@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public abstract class Format {
-    public String construct(Map<String, Object> mapFile1, Map<String, Object> mapFile2) {
+    public final String construct(Map<String, Object> mapFile1, Map<String, Object> mapFile2) {
         Map<String, Object> joinedMap = new TreeMap<>(mapFile1);
         joinedMap.putAll(mapFile2);
         StringBuilder sb = new StringBuilder();

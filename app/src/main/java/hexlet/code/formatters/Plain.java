@@ -2,7 +2,7 @@ package hexlet.code.formatters;
 
 public class Plain extends Format {
     @Override
-    String buildString(String status, String key, Object lastValue, Object value) {
+    final String buildString(String status, String key, Object lastValue, Object value) {
         StringBuilder sb = new StringBuilder();
         switch (status) {
             case "changed" -> {
@@ -10,15 +10,17 @@ public class Plain extends Format {
                         .append(transformToString(lastValue)).append(" to ").append(transformToString(value))
                         .append("\n");
             }
-            case "unchanged" -> {}
+            case "unchanged" -> {
+            }
             case "added" -> sb.append("Property '").append(key).append("' was added with value: ")
-                        .append(transformToString(value)).append("\n");
+                    .append(transformToString(value)).append("\n");
             default -> sb.append("Property '").append(key).append("' was removed").append("\n");
         }
         return sb.toString();
     }
+
     @Override
-    public String transformToString(Object o) {
+    final public String transformToString(Object o) {
         String result;
         if (o == null) {
             result = "null";

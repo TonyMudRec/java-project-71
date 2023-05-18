@@ -2,6 +2,11 @@ package hexlet.code.formatters;
 
 public class Plain extends Format {
     @Override
+    final String packer(String string) {
+        return string.substring(0, string.length() - 1);
+    }
+
+    @Override
     final String buildString(String status, String key, Object lastValue, Object value) {
         StringBuilder sb = new StringBuilder();
         switch (status) {
@@ -20,7 +25,7 @@ public class Plain extends Format {
     }
 
     @Override
-    final public String transformToString(Object o) {
+    final String transformToString(Object o) {
         String result;
         if (o == null) {
             result = "null";

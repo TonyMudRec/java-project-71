@@ -2,6 +2,11 @@ package hexlet.code.formatters;
 
 public class Json extends Format {
     @Override
+    final String packer(String string) {
+        return "{" + string.substring(0, string.length() - 1) + "}";
+    }
+
+    @Override
     final String buildString(String status, String key, Object lastValue, Object value) {
         StringBuilder sb = new StringBuilder();
         switch (status) {

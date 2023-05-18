@@ -2,6 +2,11 @@ package hexlet.code.formatters;
 
 public class Stylish extends Format {
     @Override
+    final String packer(String string) {
+        return "{\n" + string + "}";
+    }
+
+    @Override
     final String buildString(String status, String key, Object lastValue, Object value) {
         StringBuilder sb = new StringBuilder();
         switch (status) {

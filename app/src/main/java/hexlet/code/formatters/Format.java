@@ -26,8 +26,10 @@ public abstract class Format {
                 sb.append(buildString(status, key, mapFile1.get(key), mapFile2.get(key)));
             }
         }
-        return sb.toString();
+        return packer(sb.toString());
     }
+
+    abstract String packer(String string);
 
     abstract String buildString(String status, String key, Object lastValue, Object value);
 

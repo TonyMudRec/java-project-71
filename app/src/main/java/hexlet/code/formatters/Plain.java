@@ -7,7 +7,8 @@ public class Plain extends Format {
         switch (status) {
             case "changed" -> {
                 sb.append("Property '").append(key).append("' was updated. From ")
-                        .append(transformToString(lastValue)).append(" to ").append(value).append("\n");
+                        .append(transformToString(lastValue)).append(" to ").append(transformToString(value))
+                        .append("\n");
             }
             case "unchanged" -> {}
             case "added" -> sb.append("Property '").append(key).append("' was added with value: ")

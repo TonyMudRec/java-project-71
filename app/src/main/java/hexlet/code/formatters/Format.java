@@ -5,7 +5,8 @@ import java.util.TreeMap;
 
 public abstract class Format {
     public final String construct(Map<String, Object> mapFile1, Map<String, Object> mapFile2) {
-        Map<String, Object> unionMap = getUnionMap(mapFile1, mapFile2);
+        Map<String, Object> unionMap = new TreeMap<>(mapFile1);
+        unionMap.putAll(mapFile2);
         StringBuilder sb = new StringBuilder();
         for (String key : unionMap.keySet()) {
             if (mapFile1.containsKey(key) && mapFile2.containsKey(key)) {
@@ -21,12 +22,6 @@ public abstract class Format {
             }
         }
         return packer(sb.toString());
-    }
-
-    final Map<String, Object> getUnionMap(Map<String, Object> mapFile1, Map<String, Object> mapFile2) {
-        Map<String, Object> unionMap = new TreeMap<>(mapFile1);
-        unionMap.putAll(mapFile2);
-        return unionMap;
     }
 
     abstract String packer(String string);

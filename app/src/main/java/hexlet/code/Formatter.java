@@ -14,7 +14,7 @@ public class Formatter {
         return switch (format) {
             case "stylish" -> stylish.construct(mapFile1, mapFile2);
             case "plain" -> plain.construct(mapFile1, mapFile2);
-            case "json" ->json.construct(mapFile1, mapFile2);
+            case "json" -> json.construct(mapFile1, mapFile2);
             default -> "Format is not exist";
         };
     }

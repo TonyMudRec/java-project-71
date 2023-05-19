@@ -2,12 +2,12 @@ package hexlet.code.formatters;
 
 public class Json implements Format {
     @Override
-    public String packer(String string) {
+    public final String packer(String string) {
         return "{" + string.substring(0, string.length() - 1) + "}";
     }
 
     @Override
-    public String buildString(String status, String key, Object lastValue, Object value) {
+    public final String buildString(String status, String key, Object lastValue, Object value) {
         StringBuilder sb = new StringBuilder();
         switch (status) {
             case "changed" -> {
@@ -25,7 +25,7 @@ public class Json implements Format {
     }
 
     @Override
-    public String transformToString(Object o) {
+    public final String transformToString(Object o) {
         String result;
         if (o == null) {
             result = "null";

@@ -1,13 +1,13 @@
 package hexlet.code.formatters;
 
-public class Stylish extends Format {
+public class Stylish implements Format {
     @Override
-    final String packer(String string) {
+    public String packer(String string) {
         return "{\n" + string + "}";
     }
 
     @Override
-    final String buildString(String status, String key, Object lastValue, Object value) {
+    public String buildString(String status, String key, Object lastValue, Object value) {
         StringBuilder sb = new StringBuilder();
         switch (status) {
             case "changed" -> {
@@ -25,7 +25,7 @@ public class Stylish extends Format {
     }
 
     @Override
-    final String transformToString(Object o) {
+    public String transformToString(Object o) {
         String result;
         if (o == null) {
             result = "null";

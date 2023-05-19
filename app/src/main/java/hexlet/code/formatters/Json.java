@@ -1,13 +1,13 @@
 package hexlet.code.formatters;
 
-public class Json extends Format {
+public class Json implements Format {
     @Override
-    final String packer(String string) {
+    public String packer(String string) {
         return "{" + string.substring(0, string.length() - 1) + "}";
     }
 
     @Override
-    final String buildString(String status, String key, Object lastValue, Object value) {
+    public String buildString(String status, String key, Object lastValue, Object value) {
         StringBuilder sb = new StringBuilder();
         switch (status) {
             case "changed" -> {
@@ -25,7 +25,7 @@ public class Json extends Format {
     }
 
     @Override
-    final String transformToString(Object o) {
+    public String transformToString(Object o) {
         String result;
         if (o == null) {
             result = "null";

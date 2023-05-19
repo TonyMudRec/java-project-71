@@ -3,8 +3,8 @@ package hexlet.code.formatters;
 import java.util.Map;
 import java.util.TreeMap;
 
-public abstract class Format {
-    public final String construct(Map<String, Object> mapFile1, Map<String, Object> mapFile2) {
+public interface Format {
+    default String construct(Map<String, Object> mapFile1, Map<String, Object> mapFile2) {
         Map<String, Object> unionMap = new TreeMap<>(mapFile1);
         unionMap.putAll(mapFile2);
         StringBuilder sb = new StringBuilder();
@@ -24,11 +24,11 @@ public abstract class Format {
         return packer(sb.toString());
     }
 
-    abstract String packer(String string);
+    String packer(String string);
 
-    abstract String buildString(String status, String key, Object lastValue, Object value);
+    String buildString(String status, String key, Object lastValue, Object value);
 
-    abstract String transformToString(Object o);
+    String transformToString(Object o);
 
     static boolean isEqual(Object o1, Object o2) {
         if (o1 == null | o2 == null) {

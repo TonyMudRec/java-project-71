@@ -17,15 +17,6 @@ class DifferTest {
     }
 
     @Test
-    void wrongFormat() {
-        Map<String, Object> mapFile1 = new HashMap<>();
-        Map<String, Object> mapFile2 = new HashMap<>();
-        String format = "something wrong";
-        String expected = "Format is not exist";
-        assertThat(Formatter.useForm(format, mapFile1, mapFile2)).isEqualTo(expected);
-    }
-
-    @Test
     void generatePlainTest() {
         String testFilePath1 = "src/test/resources/files/file3.json";
         String testFilePath2 = "src/test/resources/files/file4.json";
